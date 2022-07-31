@@ -14,7 +14,6 @@
 </script>
 
 <script lang="ts">
-import { session } from '$app/stores'
 import { send } from '$lib/api'
 
 export let error: string 
@@ -28,7 +27,9 @@ async function register(event: SubmitEvent) {
         error = response.error
     }
 
-    $session.user = response.user
+    if (response.success) {
+      success = response.success
+    }
 
     formEl.reset()
 }
@@ -52,6 +53,11 @@ async function register(event: SubmitEvent) {
 
   {#if error}
     <p class="error">{error}</p>
+  {/if}
+
+  {#if success}
+    <p>Thank you for signing up!</p>
+    <p><a href="/auth/login">You can log in.</a></p>
   {/if}
 
   <button type="submit">Sign Up</button>
