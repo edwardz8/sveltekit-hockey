@@ -1,9 +1,6 @@
 {
-	"name": "sveltek-fe",
+	"name": "sveltekit-hockey",
 	"version": "0.0.1",
-	"engines": {
-		"node": "18.x"
-	},
 	"scripts": {
 		"dev": "vite dev",
 		"start": "node build",
