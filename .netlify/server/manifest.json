@@ -15,7 +15,7 @@
     "src": "src/routes/players/index.ts",
     "isEntry": true,
     "imports": [
-      "_database-67e80463.js"
+      "_database-2c99dac9.js"
     ]
   },
   "src/routes/todos/index.ts": {
@@ -38,7 +38,7 @@
     "src": "src/routes/auth/login/index.ts",
     "isEntry": true,
     "imports": [
-      "_database-67e80463.js"
+      "_database-2c99dac9.js"
     ]
   },
   "src/routes/auth/register/index.ts": {
@@ -46,7 +46,7 @@
     "src": "src/routes/auth/register/index.ts",
     "isEntry": true,
     "imports": [
-      "_database-67e80463.js"
+      "_database-2c99dac9.js"
     ]
   },
   "src/routes/__layout.svelte": {
@@ -100,8 +100,7 @@
     "src": "src/routes/auth/register/index.svelte",
     "isEntry": true,
     "imports": [
-      "_index-67075ed5.js",
-      "_stores-a06e66cb.js"
+      "_index-67075ed5.js"
     ],
     "css": [
       "_app/immutable/assets/index-cc7d8b38.css"
@@ -151,8 +150,8 @@
   "_index-67075ed5.js": {
     "file": "_app/immutable/chunks/index-67075ed5.js"
   },
-  "_database-67e80463.js": {
-    "file": "_app/immutable/chunks/database-67e80463.js"
+  "_database-2c99dac9.js": {
+    "file": "_app/immutable/chunks/database-2c99dac9.js"
   },
   "_stores-a06e66cb.js": {
     "file": "_app/immutable/chunks/stores-a06e66cb.js",
@@ -161,11 +160,11 @@
     ]
   },
   "src/hooks.ts": {
-    "file": "_app/immutable/chunks/hooks-8c2bffbf.js",
+    "file": "_app/immutable/chunks/hooks-ce9e5792.js",
     "src": "src/hooks.ts",
     "isDynamicEntry": true,
     "imports": [
-      "_database-67e80463.js"
+      "_database-2c99dac9.js"
     ]
   }
 }

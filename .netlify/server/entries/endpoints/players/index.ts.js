@@ -20,10 +20,10 @@ __export(stdin_exports, {
   GET: () => GET
 });
 module.exports = __toCommonJS(stdin_exports);
-var import_database_67e80463 = require("../../../_app/immutable/chunks/database-67e80463.js");
+var import_database_2c99dac9 = require("../../../_app/immutable/chunks/database-2c99dac9.js");
 var import_client = require("@prisma/client");
 async function getPlayers() {
-  const players = await import_database_67e80463.p.player.findMany({
+  const players = await import_database_2c99dac9.p.player.findMany({
     orderBy: { name: "desc" }
   });
   return players.map((p) => {

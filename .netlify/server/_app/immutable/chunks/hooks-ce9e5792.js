@@ -28,7 +28,7 @@ __export(stdin_exports, {
 });
 module.exports = __toCommonJS(stdin_exports);
 var cookie = __toESM(require("cookie"));
-var import_database_67e80463 = require("./database-67e80463.js");
+var import_database_2c99dac9 = require("./database-2c99dac9.js");
 var import_client = require("@prisma/client");
 const handle = async ({
   event,
@@ -39,7 +39,7 @@ const handle = async ({
   if (!cookies.session) {
     return await resolve(event);
   }
-  const session = await import_database_67e80463.d.user.findUnique({
+  const session = await import_database_2c99dac9.d.user.findUnique({
     where: { userAuthToken: cookies.session }
   });
   if (session) {

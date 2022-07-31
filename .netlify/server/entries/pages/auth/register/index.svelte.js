@@ -22,21 +22,18 @@ __export(stdin_exports, {
 });
 module.exports = __toCommonJS(stdin_exports);
 var import_index_67075ed5 = require("../../../../_app/immutable/chunks/index-67075ed5.js");
-var import_stores_a06e66cb = require("../../../../_app/immutable/chunks/stores-a06e66cb.js");
 const index_svelte_svelte_type_style_lang = "";
 const css = {
   code: ".error.svelte-1inscdf{color:orange}",
   map: null
 };
-const load = ({ session: session2, props }) => {
-  if (session2.user) {
+const load = ({ session, props }) => {
+  if (session.user) {
     return { status: 302, redirect: "/protected" };
   }
   return { props };
 };
 const Register = (0, import_index_67075ed5.c)(($$result, $$props, $$bindings, slots) => {
-  let $$unsubscribe_session;
-  $$unsubscribe_session = (0, import_index_67075ed5.a)(import_stores_a06e66cb.s, (value) => value);
   let { error } = $$props;
   let { success } = $$props;
   if ($$props.error === void 0 && $$bindings.error && error !== void 0)
@@ -44,7 +41,6 @@ const Register = (0, import_index_67075ed5.c)(($$result, $$props, $$bindings, sl
   if ($$props.success === void 0 && $$bindings.success && success !== void 0)
     $$bindings.success(success);
   $$result.css.add(css);
-  $$unsubscribe_session();
   return `<form method="${"post"}"><div><label for="${"username"}">Username</label>
     <input id="${"username"}" name="${"username"}" type="${"text"}" required></div>
 
@@ -52,6 +48,9 @@ const Register = (0, import_index_67075ed5.c)(($$result, $$props, $$bindings, sl
     <input id="${"password"}" name="${"password"}" type="${"password"}" required></div>
 
   ${error ? `<p class="${"error svelte-1inscdf"}">${(0, import_index_67075ed5.e)(error)}</p>` : ``}
+
+  ${success ? `<p>Thank you for signing up!</p>
+    <p><a href="${"/auth/login"}">You can log in.</a></p>` : ``}
 
   <button type="${"submit"}">Sign Up</button>
 </form>`;

@@ -32,6 +32,6 @@ __export(stdin_exports, {
 module.exports = __toCommonJS(stdin_exports);
 var module2 = __toESM(require("../entries/pages/auth/register/index.svelte.js"));
 const index = 4;
-const file = "_app/immutable/pages/auth/register/index.svelte-75e52cdc.js";
-const imports = ["_app/immutable/pages/auth/register/index.svelte-75e52cdc.js", "_app/immutable/chunks/index-10167abb.js", "_app/immutable/chunks/stores-2237ea54.js", "_app/immutable/chunks/api-17432085.js"];
+const file = "_app/immutable/pages/auth/register/index.svelte-af4e2755.js";
+const imports = ["_app/immutable/pages/auth/register/index.svelte-af4e2755.js", "_app/immutable/chunks/index-10167abb.js", "_app/immutable/chunks/api-17432085.js"];
 const stylesheets = ["_app/immutable/assets/index-6bfc9392.css"];
