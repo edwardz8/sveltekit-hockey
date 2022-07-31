@@ -5,7 +5,7 @@ exports.handler = init({
 	assets: new Set(["favicon.png","robots.txt","svelte-welcome.png","svelte-welcome.webp"]),
 	mimeTypes: {".png":"image/png",".txt":"text/plain",".webp":"image/webp"},
 	_: {
-		entry: {"file":"_app/immutable/start-2187387c.js","imports":["_app/immutable/start-2187387c.js","_app/immutable/chunks/index-10167abb.js","_app/immutable/chunks/index-b5bef26d.js"],"stylesheets":[]},
+		entry: {"file":"_app/immutable/start-827393de.js","imports":["_app/immutable/start-827393de.js","_app/immutable/chunks/index-10167abb.js","_app/immutable/chunks/index-b5bef26d.js"],"stylesheets":[]},
 		nodes: [
 			() => Promise.resolve().then(() => require('../server/nodes/0.js')),
 			() => Promise.resolve().then(() => require('../server/nodes/1.js')),
