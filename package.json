@@ -9,7 +9,6 @@
 		"start": "node build",
 		"build": "vite build",
 		"package": "svelte-kit package",
-		"deploy": "cd build && git init && git remote add heroku https://git.heroku.com/tranquil-oasis-11029.git && git add -A . && git commit -m deploy && git push --force heroku master",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync",
 		"check": "svelte-check --tsconfig ./tsconfig.json",
