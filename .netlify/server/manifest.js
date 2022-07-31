@@ -31,7 +31,7 @@ const manifest = {
   assets: /* @__PURE__ */ new Set(["_redirects", "favicon.png", "robots.txt", "svelte-welcome.png", "svelte-welcome.webp"]),
   mimeTypes: { ".png": "image/png", ".txt": "text/plain", ".webp": "image/webp" },
   _: {
-    entry: { "file": "_app/immutable/start-10b827fc.js", "imports": ["_app/immutable/start-10b827fc.js", "_app/immutable/chunks/index-10167abb.js", "_app/immutable/chunks/index-b5bef26d.js"], "stylesheets": [] },
+    entry: { "file": "_app/immutable/start-43165815.js", "imports": ["_app/immutable/start-43165815.js", "_app/immutable/chunks/index-10167abb.js", "_app/immutable/chunks/index-b5bef26d.js"], "stylesheets": [] },
     nodes: [
       () => Promise.resolve().then(() => __toESM(require("./nodes/0.js"))),
       () => Promise.resolve().then(() => __toESM(require("./nodes/1.js"))),
