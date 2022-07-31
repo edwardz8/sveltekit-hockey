@@ -28,6 +28,7 @@
 	"dependencies": {
 		"@fontsource/fira-mono": "^4.5.0",
 		"@prisma/client": "^4.1.1",
+		"@sveltejs/adapter-node": "^1.0.0-next.85",
 		"bcrypt": "^5.0.1",
 		"cookie": "^0.4.2"
 	}
