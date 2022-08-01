@@ -8,9 +8,8 @@ export const GET: RequestHandler = async ({ params }) => {
 		return { status: 400 }
 	}
 
-	return {
-		headers: { 'Content-Type': 'application/json' },
-		status: 200,
-		body: { player }
-	}
+		return {
+			status: 200,
+			body: { player }
+		}
 }

@@ -12,7 +12,7 @@
 			<!-- <a href="/player/{player.id}" class="user">
 				{player.name}
 			</a> -->
-			<span>{ player.name }</span> 
+		    <span>{ player.name }</span>
 			<span class="info"> - { player.team } - </span>
 			<span class="info">{ player.pos } ⚔️ </span>
 		</div>

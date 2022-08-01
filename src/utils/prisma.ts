@@ -37,7 +37,7 @@ export async function getPlayers() {
 export async function getPlayer(
 	params: Record<string, string>
 ) {
-	const player = await prisma.player.findFirst({
+	const p = await prisma.player.findFirst({
 		where: { url: params.playerId },
 		/* include: { user: true } */
 	})
@@ -45,19 +45,19 @@ export async function getPlayer(
 	// const likedPlayers = await getLikedPlayers()
 
 	return {
-		id: player?.playerId,
-		content: player?.content,
-		name: player?.name,
-		team: player?.team,
-		url: player?.url,
-		pos: player?.pos,
-		goals: player?.goals,
-		assists: player?.assists,
-		blocks: player?.blocks,
-		hits: player?.hits,
-		price: player?.price,
-		fanpoints: player?.fanpoints,
-		likes: player?.likes,
+		id: p?.playerId,
+		content: p?.content,
+		name: p?.name,
+		team: p?.team,
+		url: p?.url,
+		pos: p?.pos,
+		goals: p?.goals,
+		assists: p?.assists,
+		blocks: p?.blocks,
+		hits: p?.hits,
+		price: p?.price,
+		fanpoints: p?.fanpoints,
+		likes: p?.likes,
 		// liked: likedPlayers.includes(p?.playerId),
 	}
 }

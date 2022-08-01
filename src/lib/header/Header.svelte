@@ -6,9 +6,9 @@
 
 <header>
 	<div class="corner">
-		<a href="#">
+		<span>
 			<img src={logo} alt="SvelteKit" />
-		</a>
+		</span>
 	</div>
 
 	<nav>
