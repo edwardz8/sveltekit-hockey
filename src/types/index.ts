@@ -1,5 +1,5 @@
 export type PlayerType = {
-	id: number
+	playerId: number
 	content: string
 	likes: number
 	url: string

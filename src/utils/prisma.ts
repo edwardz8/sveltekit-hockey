@@ -37,7 +37,7 @@ export async function getPlayers() {
 export async function getPlayer(
 	params: Record<string, string>
 ) {
-	const p = await prisma.player.findFirst({
+	const p = await prisma.player.findUnique({
 		where: { url: params.playerId },
 		/* include: { user: true } */
 	})

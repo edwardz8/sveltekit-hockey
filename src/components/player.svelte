@@ -12,7 +12,6 @@
 			<a href="/player/{player.url}" class="user">
 				{player.name}
 			</a>
-		    <!-- <span>{ player.name }</span> -->
 			<span class="info"> - { player.team } - </span>
 			<span class="info">{ player.pos } ⚔️ </span>
 		</div>
