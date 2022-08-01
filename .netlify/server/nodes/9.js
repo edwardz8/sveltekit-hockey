@@ -30,8 +30,8 @@ __export(stdin_exports, {
   stylesheets: () => stylesheets
 });
 module.exports = __toCommonJS(stdin_exports);
-var module2 = __toESM(require("../entries/pages/protected/index.svelte.js"));
-const index = 8;
-const file = "_app/immutable/pages/protected/index.svelte-d53553d7.js";
-const imports = ["_app/immutable/pages/protected/index.svelte-d53553d7.js", "_app/immutable/chunks/index-10167abb.js"];
-const stylesheets = [];
+var module2 = __toESM(require("../entries/pages/todos.svelte.js"));
+const index = 9;
+const file = "_app/immutable/pages/todos.svelte-77fb6bdc.js";
+const imports = ["_app/immutable/pages/todos.svelte-77fb6bdc.js", "_app/immutable/chunks/index-10167abb.js", "_app/immutable/chunks/index-b5bef26d.js"];
+const stylesheets = ["_app/immutable/assets/todos-d74f354c.css"];

@@ -21,7 +21,6 @@ __export(stdin_exports, {
 });
 module.exports = __toCommonJS(stdin_exports);
 var import_index_67075ed5 = require("../../../_app/immutable/chunks/index-67075ed5.js");
-const player_svelte_svelte_type_style_lang = "";
 const css = {
   code: ".player-container.svelte-9xpwkm:hover{background-color:var(--color-bg-secondary)}.player-container.svelte-9xpwkm{display:grid;gap:2;padding:var(--spacing-16) var(--spacing-24);transition:all 0.3s}.player-container.svelte-9xpwkm:not(:last-child){border-bottom:1px solid var(--color-border-primary)}.player-details.svelte-9xpwkm{display:flex;justify-content:space-between}.user.svelte-9xpwkm{font-weight:700;text-transform:capitalize}.user.svelte-9xpwkm:hover{text-decoration:underline}.content.svelte-9xpwkm{font-size:var(--font-16)}",
   map: null
@@ -31,7 +30,8 @@ const Player = (0, import_index_67075ed5.c)(($$result, $$props, $$bindings, slot
   if ($$props.player === void 0 && $$bindings.player && player !== void 0)
     $$bindings.player(player);
   $$result.css.add(css);
-  return `<article class="${"player-container svelte-9xpwkm"}"><div class="${"player-details svelte-9xpwkm"}"><div><a href="${"/players/" + (0, import_index_67075ed5.e)(player.name, true)}" class="${"user svelte-9xpwkm"}">${(0, import_index_67075ed5.e)(player.name)}</a></div>
+  return `<article class="${"player-container svelte-9xpwkm"}"><div class="${"player-details svelte-9xpwkm"}"><div><a href="${"/player/" + (0, import_index_67075ed5.e)(player.id, true)}" class="${"user svelte-9xpwkm"}">${(0, import_index_67075ed5.e)(player.name)}</a>
+			</div>
 
 		<div class="${"player"}"><div class="${"content svelte-9xpwkm"}">${(0, import_index_67075ed5.e)(player.content)}</div>
 
@@ -42,13 +42,11 @@ const Players = (0, import_index_67075ed5.c)(($$result, $$props, $$bindings, slo
   let { players = [] } = $$props;
   if ($$props.players === void 0 && $$bindings.players && players !== void 0)
     $$bindings.players(players);
-  return `${$$result.head += `${$$result.title = `<title>Home</title>`, ""}`, ""}
+  return `${$$result.head += `${$$result.title = `<title>Players</title>`, ""}`, ""}
 
 <h1>Ottawa Senators</h1>
 
 ${(0, import_index_67075ed5.d)(players, (player) => {
     return `${(0, import_index_67075ed5.v)(Player, "Player").$$render($$result, { player }, {}, {})}`;
-  })}
-
-`;
+  })}`;
 });

@@ -20,30 +20,11 @@ __export(stdin_exports, {
   GET: () => GET
 });
 module.exports = __toCommonJS(stdin_exports);
+var import_prisma_5b2709a1 = require("../../../_app/immutable/chunks/prisma-5b2709a1.js");
 var import_database_67e80463 = require("../../../_app/immutable/chunks/database-67e80463.js");
 var import_client = require("@prisma/client");
-async function getPlayers() {
-  const players = await import_database_67e80463.p.player.findMany({
-    orderBy: { name: "desc" }
-  });
-  return players.map((p) => {
-    return {
-      id: p.playerId,
-      content: p.content,
-      name: p.name,
-      url: p.url,
-      pos: p.pos,
-      goals: p.goals,
-      assists: p.assists,
-      blocks: p.blocks,
-      hits: p.hits,
-      price: p.price,
-      likes: p.likes
-    };
-  });
-}
 const GET = async () => {
-  const players = await getPlayers();
+  const players = await (0, import_prisma_5b2709a1.g)();
   if (!players) {
     return { status: 400 };
   }

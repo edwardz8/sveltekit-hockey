@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { fade, fly } from 'svelte/transition'
+	import { fade } from 'svelte/transition'
 	import type { PlayerType } from '$root/types'
-    import Icon from '$root/components/icon.svelte'
+    // import Icon from '$root/components/icon.svelte'
 
 	export let player: PlayerType
 </script>
@@ -9,9 +9,14 @@
 <article class="player-container" transition:fade>
 	<div class="player-details">
 		<div>
-			<a href="/players/{player.name}" class="user">
+			<a href="/player/{player.id}" class="user">
 				{player.name}
 			</a>
+			<!-- <span>{ player.name }</span> 
+				<span class="info">{ player.team }</span>
+				<span class="info">{ player.pos }</span>
+			
+			-->
 		</div>
 
 		<div class="player">

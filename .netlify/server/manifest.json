@@ -15,6 +15,7 @@
     "src": "src/routes/players/index.ts",
     "isEntry": true,
     "imports": [
+      "_prisma-5b2709a1.js",
       "_database-67e80463.js"
     ]
   },
@@ -27,6 +28,15 @@
     "file": "entries/endpoints/players/like.ts.js",
     "src": "src/routes/players/like.ts",
     "isEntry": true
+  },
+  "src/routes/player/id.ts": {
+    "file": "entries/endpoints/player/id.ts.js",
+    "src": "src/routes/player/id.ts",
+    "isEntry": true,
+    "imports": [
+      "_prisma-5b2709a1.js",
+      "_database-67e80463.js"
+    ]
   },
   "src/routes/auth/logout/index.ts": {
     "file": "entries/endpoints/auth/logout/index.ts.js",
@@ -117,6 +127,18 @@
       "_app/immutable/assets/index-86d5afa1.css"
     ]
   },
+  "src/routes/player/[id].svelte": {
+    "file": "entries/pages/player/_id_.svelte.js",
+    "src": "src/routes/player/[id].svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-67075ed5.js",
+      "_stores-a06e66cb.js"
+    ],
+    "css": [
+      "_app/immutable/assets/player-b3e99819.css"
+    ]
+  },
   "src/routes/players/index.svelte": {
     "file": "entries/pages/players/index.svelte.js",
     "src": "src/routes/players/index.svelte",
@@ -125,7 +147,7 @@
       "_index-67075ed5.js"
     ],
     "css": [
-      "_app/immutable/assets/index-b3e99819.css"
+      "_app/immutable/assets/player-b3e99819.css"
     ]
   },
   "src/routes/protected/index.svelte": {
@@ -149,6 +171,12 @@
   },
   "_index-67075ed5.js": {
     "file": "_app/immutable/chunks/index-67075ed5.js"
+  },
+  "_prisma-5b2709a1.js": {
+    "file": "_app/immutable/chunks/prisma-5b2709a1.js",
+    "imports": [
+      "_database-67e80463.js"
+    ]
   },
   "_database-67e80463.js": {
     "file": "_app/immutable/chunks/database-67e80463.js"

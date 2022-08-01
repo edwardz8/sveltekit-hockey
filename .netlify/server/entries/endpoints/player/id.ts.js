@@ -1,8 +1,6 @@
-var __create = Object.create;
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
-var __getProtoOf = Object.getPrototypeOf;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __export = (target, all) => {
   for (var name in all)
@@ -16,22 +14,23 @@ var __copyProps = (to, from, except, desc) => {
   }
   return to;
 };
-var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
-  isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
-  mod
-));
 var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 var stdin_exports = {};
 __export(stdin_exports, {
-  file: () => file,
-  imports: () => imports,
-  index: () => index,
-  module: () => module2,
-  stylesheets: () => stylesheets
+  GET: () => GET
 });
 module.exports = __toCommonJS(stdin_exports);
-var module2 = __toESM(require("../entries/pages/protected/index.svelte.js"));
-const index = 8;
-const file = "_app/immutable/pages/protected/index.svelte-d53553d7.js";
-const imports = ["_app/immutable/pages/protected/index.svelte-d53553d7.js", "_app/immutable/chunks/index-10167abb.js"];
-const stylesheets = [];
+var import_prisma_5b2709a1 = require("../../../_app/immutable/chunks/prisma-5b2709a1.js");
+var import_database_67e80463 = require("../../../_app/immutable/chunks/database-67e80463.js");
+var import_client = require("@prisma/client");
+const GET = async ({ params }) => {
+  const player = await (0, import_prisma_5b2709a1.a)(params);
+  if (!player) {
+    return { status: 400 };
+  }
+  return {
+    headers: { "Content-Type": "application/json" },
+    status: 200,
+    body: { player }
+  };
+};

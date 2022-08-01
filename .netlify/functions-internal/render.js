@@ -2,19 +2,20 @@ const { init } = require('../serverless.js');
 
 exports.handler = init({
 	appDir: "_app",
-	assets: new Set(["favicon.png","robots.txt","svelte-welcome.png","svelte-welcome.webp"]),
-	mimeTypes: {".png":"image/png",".txt":"text/plain",".webp":"image/webp"},
+	assets: new Set(["favicon.png","hockeyphone.png","robots.txt","rotorink.jpeg","svelte-welcome.png","svelte-welcome.webp"]),
+	mimeTypes: {".png":"image/png",".txt":"text/plain",".jpeg":"image/jpeg",".webp":"image/webp"},
 	_: {
-		entry: {"file":"_app/immutable/start-888707b7.js","imports":["_app/immutable/start-888707b7.js","_app/immutable/chunks/index-10167abb.js","_app/immutable/chunks/index-b5bef26d.js"],"stylesheets":[]},
+		entry: {"file":"_app/immutable/start-1b97e564.js","imports":["_app/immutable/start-1b97e564.js","_app/immutable/chunks/index-10167abb.js","_app/immutable/chunks/index-b5bef26d.js"],"stylesheets":[]},
 		nodes: [
 			() => Promise.resolve().then(() => require('../server/nodes/0.js')),
 			() => Promise.resolve().then(() => require('../server/nodes/1.js')),
 			() => Promise.resolve().then(() => require('../server/nodes/5.js')),
-			() => Promise.resolve().then(() => require('../server/nodes/6.js')),
 			() => Promise.resolve().then(() => require('../server/nodes/7.js')),
 			() => Promise.resolve().then(() => require('../server/nodes/8.js')),
+			() => Promise.resolve().then(() => require('../server/nodes/9.js')),
 			() => Promise.resolve().then(() => require('../server/nodes/3.js')),
-			() => Promise.resolve().then(() => require('../server/nodes/4.js'))
+			() => Promise.resolve().then(() => require('../server/nodes/4.js')),
+			() => Promise.resolve().then(() => require('../server/nodes/6.js'))
 		],
 		routes: [
 			{
@@ -71,6 +72,14 @@ exports.handler = init({
 			},
 			{
 				type: 'endpoint',
+				id: "player/id",
+				pattern: /^\/player\/id\/?$/,
+				names: [],
+				types: [],
+				load: () => Promise.resolve().then(() => require('../server/entries/endpoints/player/id.ts.js'))
+			},
+			{
+				type: 'endpoint',
 				id: "auth/logout",
 				pattern: /^\/auth\/logout\/?$/,
 				names: [],
@@ -97,6 +106,17 @@ exports.handler = init({
 				path: "/auth/register",
 				shadow: () => Promise.resolve().then(() => require('../server/entries/endpoints/auth/register/index.ts.js')),
 				a: [0,7],
+				b: [1]
+			},
+			{
+				type: 'page',
+				id: "player/[id]",
+				pattern: /^\/player\/([^/]+?)\/?$/,
+				names: ["id"],
+				types: [null],
+				path: null,
+				shadow: null,
+				a: [0,8],
 				b: [1]
 			}
 		],
