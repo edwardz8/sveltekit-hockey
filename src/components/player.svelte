@@ -9,14 +9,12 @@
 <article class="player-container" transition:fade>
 	<div class="player-details">
 		<div>
-			<a href="/player/{player.id}" class="user">
+			<!-- <a href="/player/{player.id}" class="user">
 				{player.name}
-			</a>
-			<!-- <span>{ player.name }</span> 
-				<span class="info">{ player.team }</span>
-				<span class="info">{ player.pos }</span>
-			
-			-->
+			</a> -->
+			<span>{ player.name }</span> 
+			<span class="info"> - { player.team } - </span>
+			<span class="info">{ player.pos } ⚔️ </span>
 		</div>
 
 		<div class="player">

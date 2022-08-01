@@ -9,7 +9,7 @@
 	<title>Players</title>
 </svelte:head>
 
-<h1>Ottawa Senators</h1>
+<h1>Ottawa Senators 🏒</h1>
 
 {#each players as player (player.id)}
 	<Player {player} />
