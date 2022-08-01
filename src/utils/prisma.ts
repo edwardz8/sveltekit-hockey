@@ -16,7 +16,7 @@ export async function getPlayers() {
 
 	return players.map((p) => {
 		return {
-			id: p.playerId,
+			playerId: p.playerId,
 			content: p.content,
 			name: p.name,
 			team: p.team,
@@ -64,7 +64,7 @@ export async function getPlayer(
 
 
 // Get Liked Players 
-/* export async function getLikedPlayers() {
+export async function getLikedPlayers() {
 	const liked = await prisma.liked.findMany({
 		where: { likes },
 		select: { playerId: true }
@@ -73,7 +73,60 @@ export async function getPlayer(
 		(key) => liked[key].playerId
 	)
 	return likedplayers
-} */
+}
+
+/* Like Player */
+export async function likePlayer(request: Request) {
+	const form = await request.formData()
+	const id = +form.get('playerId')
+
+	// verify if tweet is already liked
+	const liked = await prisma.liked.count({
+		where: { playerId: id },
+	})
+
+	if (liked === 1) {
+		// if tweet is already liked unlike it
+		await prisma.liked.delete({ where: { playerId: id } })
+
+		// update the likes count
+		const count = await prisma.player.findUnique({
+			where: { playerId },
+			select: { likes: true },
+		})
+
+		await prisma.player.update({
+			where: { playerId },
+			data: { likes: (count.likes -= 1) },
+		})
+
+		return {
+			status: 303,
+			headers: {
+				location: '/players',
+			},
+		}
+	}
+
+	// add liked record
+	await prisma.liked.create({
+		data: {
+			playerId: id,
+			user: { connect: { username } },
+		},
+	})
+
+	// get the current like count and update it
+	const count = await prisma.player.findUnique({
+		where: { playerId },
+		select: { likes: true },
+	})
+
+	await prisma.player.update({
+		where: { playerId },
+		data: { likes: (count.likes += 1) },
+	})
+}
 
 
 // Create Comment on Player 
@@ -100,10 +153,40 @@ export async function getPlayer(
 } */
 
 
-// Remove User Comment from Player
-/* export async function removeComment(request: Request) {
-	const form = await request.formData()
-	const playerId = +form.get('id')
-	await prisma.player.delete({ where: { id: playerId } })
-}
- */
+/* 
+ const comment = await prisma.comment.create({
+    data: {
+      body,
+      player: {
+        connect: {
+          id: player?.playerId,
+        },
+      },
+      user: {
+        connect: {
+          id: user?.userId,
+        },
+      },
+    },
+    include: {
+      user: {
+        select: {
+          username: true,
+          bio: true,
+          image: true,
+          followedBy: true,
+        },
+      },
+    },
+  });
+
+  return {
+    id: comment.id,
+    body: comment.body,
+    user: {
+      username: comment.author.username,
+      bio: comment.author.bio,
+    },
+  };
+};
+*/

@@ -28,4 +28,4 @@ export let user: string
 
 <p>Thanks for signing up!</p>
 
-<p>View the players page but routing for an individual player is broken at the moment. being able to like a player and comment on the player card is coming soon.</p>
+<p>View the players page to view their latest and stats and news. Favoriting and commenting on players in progress.</p>
