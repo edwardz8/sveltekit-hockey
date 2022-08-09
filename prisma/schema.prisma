@@ -17,7 +17,7 @@ model User {
   username      String    @unique
   passwordHash  String
   userAuthToken String    @unique @default(cuid())
-  liked         Liked[]
+  like          Like[]
   comments      Comment[]
 }
 
@@ -47,20 +47,25 @@ model Player {
   active   Int
   age      Int 
   comments Comment[]
+  like    Like[]
 }
 
-model Liked {
-  id       Int    @id @default(autoincrement())
-  playerId String @unique
+model Like {
+  @@id([userId, playerId])
+  player   Player @relation(fields: [playerId], references: [playerId])
+  playerId String
   user     User   @relation(fields: [userId], references: [id])
   userId   String
 }
 
 model Comment {
-  id       Int    @id
+  id       String    @id
   body     String
-  player   Player @relation(fields: [playerId], references: [playerId])
-  playerId String @unique
-  user     User   @relation(fields: [userId], references: [id])
-  userId   String
+  player   Player    @relation(fields: [playerId], references: [playerId], onDelete: Cascade)
+  playerId String    
+  user     User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId   String 
+  parent   Comment?  @relation("ParentChild", fields: [parentId], references: [id])
+  children Comment[] @relation("ParentChild")
+  parentId String?
 }

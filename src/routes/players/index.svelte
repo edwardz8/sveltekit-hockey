@@ -11,6 +11,6 @@
 
 <h1>Ottawa Senators 🏒</h1>
 
-{#each players as player (player.id)}
+{#each players as player (player.playerId)}
 	<Player {player} />
 {/each}

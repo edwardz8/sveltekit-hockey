@@ -1,11 +1,5 @@
 import prisma from '$root/lib/database'
 
-/* 
-const user = await prisma.user.findUnique({
-		where: { username }
-	})
-*/
-
 export async function getPlayers() {
 	const players = await prisma.player.findMany({
 		/* include: { username }, */
@@ -28,7 +22,7 @@ export async function getPlayers() {
 			hits: p.hits,
 			price: p.price,
 			fanpoints: p.fanpoints,
-			likes: p.likes,
+			// likes: p.likes,
 			// liked: likedPlayers.includes(p.playerId)
 		}
 	})
@@ -57,14 +51,14 @@ export async function getPlayer(
 		hits: p?.hits,
 		price: p?.price,
 		fanpoints: p?.fanpoints,
-		likes: p?.likes,
+		// likes: p?.likes,
 		// liked: likedPlayers.includes(p?.playerId),
 	}
 }
 
 
 // Get Liked Players 
-export async function getLikedPlayers() {
+/* export async function getLikedPlayers() {
 	const liked = await prisma.liked.findMany({
 		where: { likes },
 		select: { playerId: true }
@@ -73,60 +67,7 @@ export async function getLikedPlayers() {
 		(key) => liked[key].playerId
 	)
 	return likedplayers
-}
-
-/* Like Player */
-export async function likePlayer(request: Request) {
-	const form = await request.formData()
-	const id = +form.get('playerId')
-
-	// verify if tweet is already liked
-	const liked = await prisma.liked.count({
-		where: { playerId: id },
-	})
-
-	if (liked === 1) {
-		// if tweet is already liked unlike it
-		await prisma.liked.delete({ where: { playerId: id } })
-
-		// update the likes count
-		const count = await prisma.player.findUnique({
-			where: { playerId },
-			select: { likes: true },
-		})
-
-		await prisma.player.update({
-			where: { playerId },
-			data: { likes: (count.likes -= 1) },
-		})
-
-		return {
-			status: 303,
-			headers: {
-				location: '/players',
-			},
-		}
-	}
-
-	// add liked record
-	await prisma.liked.create({
-		data: {
-			playerId: id,
-			user: { connect: { username } },
-		},
-	})
-
-	// get the current like count and update it
-	const count = await prisma.player.findUnique({
-		where: { playerId },
-		select: { likes: true },
-	})
-
-	await prisma.player.update({
-		where: { playerId },
-		data: { likes: (count.likes += 1) },
-	})
-}
+} */
 
 
 // Create Comment on Player 
